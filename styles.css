@@ -123,15 +123,23 @@ main#top{
 ========================= */
 
 .logo-wrap{
-  height:72px;
+  flex:0 0 clamp(220px, 20vw, 340px);
+  width:clamp(220px, 20vw, 340px);
+  min-width:220px;
+  max-width:340px;
   display:flex;
   align-items:center;
 }
 
-.logo-wrap img{
-  height:100%;
-  width:auto;
+.header .logo-wrap img.site-logo{
+  display:block;
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  max-width:100% !important;
   object-fit:contain;
+  aspect-ratio:1000 / 216;
+  min-width:0;
 }
 
 /* =========================
@@ -806,7 +814,12 @@ button:focus, a:focus{ outline: 3px solid rgba(62,58,55,0.12); outline-offset:4p
 /* ---------- RESPONSIVE / MOBILE ---------- */
 
 @media (max-width: 992px){
-  .logo-wrap{ width:200px; height:64px }
+  .logo-wrap{
+    flex-basis:210px;
+    width:210px;
+    min-width:210px;
+    max-width:210px;
+  }
   h1{ font-size:2.6rem }
 }
 
@@ -900,7 +913,12 @@ button:focus, a:focus{ outline: 3px solid rgba(62,58,55,0.12); outline-offset:4p
 
   /* keep header compact */
   .nav-container{ padding:10px 12px }
-  .logo-wrap{ height:56px; width:auto }
+  .logo-wrap{
+    flex-basis:190px;
+    width:190px;
+    min-width:190px;
+    max-width:190px;
+  }
 
   /* hero adapted */
   .hero{
